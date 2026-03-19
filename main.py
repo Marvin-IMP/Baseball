@@ -1,6 +1,10 @@
 from entidades.perro import Perro
 from exceptions.perro_error import PerroError
 from exceptions.edad_error import EdadError
+from colorama import init, Fore
+from txtanim import typewriter
+
+init()
 try:
 
     print("Ingresa el nombre del perro")
@@ -18,7 +22,8 @@ try:
     perro = Perro(nombre,color,onomatopeya, edad)
 
     saludo = perro.saludar()
-    print(saludo)
+    #print(Fore.RED + saludo)
+    typewriter(saludo, speed=0.05)
 
 except ValueError:
     print("eso noooo")
